@@ -2,9 +2,10 @@ var app = angular.module("App", ['ui.router']);
 
 var lessons = [];
 
-$.getJSON( "/api/lessons", function( data ) {
-  lessons = data;
-});
+app.run(function($http){
+  $http.get("/api/lessons")
+      .success(function(response) {lessons = response;});
+})
 
 app.config(function ($stateProvider) {
         $stateProvider
