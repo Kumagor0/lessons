@@ -16,41 +16,12 @@ app.config(function ($stateProvider) {
     });
     
 app.controller('MainController', function($scope) {
-    });
+});
 
 
 //$.getJSON( "/api/lessons", function( data ) {
-    var lessons = [
-   {  
-      "url":1,
-      "title":"Lesson 1 title",
-      "text":"Lesson 1 text",
-      "faq":[  
-         {  
-            "title":"Question 1 title",
-            "text":"Question 1 text"
-         },
-         {  
-            "title":"Question 2 title",
-            "text":"Question 2 text"
-         },
-         {  
-            "title":"Question 3 title",
-            "text":"Question 3 text"
-         },
-         {  
-            "title":"Question 4 title",
-            "text":"Question 4 text"
-         }
-      ]
-   }
-];
-
-    app.controller('LessonsController', function($scope) {
-        $scope.lessons = lessons;
-    });
-
-lessons = [  
+    var lessons = 
+[  
    {  
       "url":1,
       "title":"Lesson 1 title",
@@ -277,7 +248,13 @@ lessons = [
          }
       ]
    }
-];    
+];
+
+app.controller('LessonsController', function($scope) {
+    $scope.lessons = lessons;
+});
+
+    
 
 for (var i = 1; i<=lessons.length; i++){
     var stateName = 'lesson_' + i;
