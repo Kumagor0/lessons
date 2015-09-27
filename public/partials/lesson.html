@@ -1,6 +1,7 @@
 <h1>{{title}}</h1>
 <div>{{text}}</div>
-<p ng-repeat="q in faq">
-	<h2>q.question</h2>
-	<div>q.answer</div>
-</p>
+<div ng-repeat="q in faq">
+	<h3>{{q.title}}</h3>
+	<div>{{q.text}}</div>
+</div>
+<a href="#lessons">Back to menu</a>
