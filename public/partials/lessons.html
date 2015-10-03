@@ -1,3 +1,7 @@
-<ul>
-	<ol ng-repeat="lesson in lessons"><a href="#lessons/{{lesson.url}}">{{ $index + 1 }}. {{ lesson.title }}</a></ol>
-</ul>
+<div class="container">
+	<div class="starter-template">
+		<ul class="nav nav-pills nav-stacked">
+			<li role="presentation" ng-repeat="lesson in lessons"><a href="#lessons/{{lesson.url}}">{{ $index + 1 }}. {{ lesson.title }}</a></li>
+		</ul>
+	</div>
+</div>

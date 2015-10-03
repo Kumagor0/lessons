@@ -11,7 +11,7 @@ app.config(function ($stateProvider) {
         $stateProvider
           .state('index', {
             url: '',
-            template: 'Go to <a href="#lessons">/lessons</a>'
+            templateUrl: 'partials/index.html'
           })
           .state('lessons', {
             url: '/lessons',
@@ -23,7 +23,8 @@ app.config(function ($stateProvider) {
           .state('lesson', {
             url: '/lessons/{lessonId}',
             templateUrl: 'partials/lesson.html',
-            controller: function ($scope, $stateParams) {
+            controller: function ($scope, $stateParams, $sce) {
+              $scope.trustAsHtml = $sce.trustAsHtml;
               $scope.title = lessons[$stateParams.lessonId - 1].title;
               $scope.text = lessons[$stateParams.lessonId - 1].text;
               $scope.faq = lessons[$stateParams.lessonId - 1].faq;

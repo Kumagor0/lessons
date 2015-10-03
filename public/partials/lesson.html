@@ -1,7 +1,14 @@
-<h1>{{title}}</h1>
-<div>{{text}}</div>
-<div ng-repeat="q in faq">
-	<h3>{{q.title}}</h3>
-	<div>{{q.text}}</div>
+<div class="container">
+	<p><a class="btn btn-lg btn-info" href="#lessons" role="button">&laquo; Back to lessons list</a></p>
+	<h1>{{title}}</h1>
+	<h2>{{subtitle}}</h2>
+	<h2>Теория</h2>
+	<div ng-bind-html="trustAsHtml(text)"></div>
+	<h2>FAQ</h2>
+	<div ng-repeat="q in faq">
+		<h3>{{q.title}}</h3>
+		<div ng-bind-html="trustAsHtml(q.text)"></div>
+	</div>
+	<br>
+	<p><a class="btn btn-lg btn-info" href="#lessons" role="button">&laquo; Back to lessons list</a></p>
 </div>
-<a href="#lessons">Back to menu</a>
